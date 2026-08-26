@@ -66,6 +66,10 @@ def connect_to_cube(env_conn_name: str) -> AdomdConnection:
     # Get the connection string from the .ENV variables
     load_dotenv()
     CONN_STRING = os.getenv(env_conn_name)
+    if not CONN_STRING:
+        raise ValueError(
+            f"Connection string '{env_conn_name}' not found in environment variables. Please check your .env file."
+        )
 
     conn = AdomdConnection(CONN_STRING)
     conn.Open()
@@ -87,9 +91,6 @@ def get_cube_datasets(conn: AdomdConnection) -> list:
 
 
 def get_cube_names(conn: AdomdConnection) -> dict:
-
-    # Get the names of the datasets in the cube
-    get_cube_datasets(conn)
 
     # Get names of the cubes in the database
     cubes = conn.GetSchemaDataSet("MDSCHEMA_CUBES", None)
