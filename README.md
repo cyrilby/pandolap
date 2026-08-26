@@ -15,7 +15,7 @@ The package acts as a wrapper of the `python-tabular` and `pythonnet` packages a
 To install this package into your local `venv`, add the following to your list of dependencies:
 
 ```
-msgraph @ git+https://github.com/cyrilby/olap-pycube.git
+olap_pycube @ git+https://github.com/cyrilby/olap-pycube.git
 ```
 
 The above should work regardless of whether you use a `requirements.txt` or `pyproject.toml` file.
