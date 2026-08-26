@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "olap_pycube"
+version = "0.1.0"
+description = "Python package allowing for easy access to data stored in Microsoft OLAP cubes"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "Proprietary"}
+authors = [
+{name = "Kiril B", email="kbo+git@ikmail.com"}
+]
+keywords = ["OLAP", "MSOLAP", "cube", "pandas"]
+classifiers = [
+"Development Status :: 3 - Alpha",
+"Intended Audience :: Developers",
+"Programming Language :: Python :: 3",
+"Programming Language :: Python :: 3.9",
+"Programming Language :: Python :: 3.10",
+"Programming Language :: Python :: 3.11",
+"Programming Language :: Python :: 3.12",
+"Programming Language :: Python :: 3.13",
+"Programming Language :: Python :: 3.14",
+]
+dependencies = [
+"python-dotenv>=1.2",
+"pandas>=2.3.3",
+"python-tabular>=0.5.6",
+"pythonnet>=3.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+"pytest",
+"autopep8",
+"flake8",
+"black",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["olap_pycube*"]
