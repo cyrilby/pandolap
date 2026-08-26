@@ -5,7 +5,7 @@
 
 `OLAP-PyCube` is a tiny package designed to make loading data from MSOLAP cubes into pandas data frames super easy.
 
-The package acts as a wrapper of the `python-tabular` and `pythonnet` packages and helps to deal with annoyances sucg importing seemingly missing DLLs and writing MDX queries so that the end user doesn't have to bother with them.
+The package acts as a wrapper of the `python-tabular` and `pythonnet` packages and helps to deal with annoyances such as importing seemingly missing DLLs and writing MDX queries so that the end user doesn't have to bother with them.
 
 > [!WARNING]
 > This package currently only supports Windows OS.
