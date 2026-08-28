@@ -1,9 +1,9 @@
-# OLAP-PyCube: importing data from MSOLAP cubes made easy
+# PandOLAP: importing data from MSOLAP cubes made easy
 
 - Author: github.com/cyrilby
 - Last meaningful update: 28-08-2026
 
-`OLAP-PyCube` is a tiny package designed to make loading data from MSOLAP cubes into pandas data frames super easy.
+`PandOLAP` is a tiny package designed to make loading data from MSOLAP cubes into pandas data frames super easy.
 
 The package acts as a wrapper of the `python-tabular` and `pythonnet` packages and helps to deal with annoyances such as importing seemingly missing DLLs and writing MDX queries so that the end user doesn't have to bother with them.
 
@@ -15,7 +15,7 @@ The package acts as a wrapper of the `python-tabular` and `pythonnet` packages a
 To install this package into your local `venv`, add the following to your list of dependencies:
 
 ```
-olap_pycube @ git+https://github.com/cyrilby/olap-pycube.git
+pandolap @ git+https://github.com/cyrilby/pandolap.git
 ```
 
 The above should work regardless of whether you use a `requirements.txt` or `pyproject.toml` file.
@@ -45,7 +45,7 @@ In some cases, your connection string will also contain your username and passwo
 After you have placed your connection string in a `.env` variable, you are ready to proceed. To establish a connection to the cube via Python, run the following commands:
 
 ```python
-from olap_pycube import connect_to_cube
+from pandolap import connect_to_cube
 
 conn = connect_to_cube("CUBE_CONN_STRING")
 ```
@@ -57,7 +57,7 @@ To extract data from the cube without having to write custom MDX queries, use th
 **Here's an example of how to use it in practice:**
 
 ```python
-from olap_pycube import load_data_from_cube
+from pandolap import load_data_from_cube
 
 # Specify measures, rows and columns to load via Python lists
 measures = "[Number of Customers]"
@@ -82,7 +82,7 @@ If you want to have full control over how the data is loaded, you can use the `q
 **Here's an example of how to use it in practice:**
 
 ```python
-from olap_pycube import connect_to_cube, query_cube_data
+from pandolap import connect_to_cube, query_cube_data
 
 # Make explicit connection to the cube
 conn = connect_to_cube("CUBE_CONN_STRING")

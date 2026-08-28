@@ -2,8 +2,8 @@ requires = ["setuptools >= 77.0.3"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "olap_pycube"
-version = "0.1.1"
+name = "pandolap"
+version = "0.1.2"
 description = "Python package allowing for easy access to data stored in Microsoft OLAP cubes"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -40,9 +40,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/cyrilby/olap-pycube"
-Issues = "https://github.com/cyrilby/olap-pycube/issues"
+Homepage = "https://github.com/cyrilby/pandolap"
+Issues = "https://github.com/cyrilby/pandolap/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["olap_pycube*"]
+include = ["pandolap*"]
