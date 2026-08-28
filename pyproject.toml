@@ -3,7 +3,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "olap_pycube"
-version = "0.1.0"
+version = "0.1.1"
 description = "Python package allowing for easy access to data stored in Microsoft OLAP cubes"
 readme = "README.md"
 requires-python = ">=3.9"

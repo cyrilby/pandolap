@@ -1,7 +1,7 @@
 # OLAP-PyCube: importing data from MSOLAP cubes made easy
 
 - Author: github.com/cyrilby
-- Last meaningful update: 26-08-2026
+- Last meaningful update: 28-08-2026
 
 `OLAP-PyCube` is a tiny package designed to make loading data from MSOLAP cubes into pandas data frames super easy.
 
@@ -114,9 +114,12 @@ This package also contains several other functions that can be useful, though th
 
 - `get_cube_datasets()`: loads a "list" of all datasets available in the specified cube
 - `get_cube_hierarchies()`: loads a "list" of hierarchies available in the specified cube
-- `get_cube_measures()`: loads a "list" of measures defined in the specified cube
+- `get_cube_measures()`: loads a "list" of measures defined in the specified cube (can be used as inspiration for choosing what data to source)
+- `get_cube_dimensions()`: loads a list of dimensions available in the specified cube, including top-level and bottom-level entries (can be used as inspiration for choosing what data to source)
 - `get_cube_names()`: loads a "list" of the cubes available on the server specified in your connection string via the `.env` file
-- `find_dll_path()`: finds the path of the DLL file that Python uses to connect to MSOLAP cubes (this function is not meant to be called by the end user and is integrated into the `connect_to_cube()` function) 
+- `find_dll_path()`: finds the path of the DLL file that Python uses to connect to MSOLAP cubes (this function is not meant to be called by the end user and is integrated into the `connect_to_cube()` function)
+- `clean_cube_column()`: adapts a single column name in a data frame sourced from a cube so that it complies with Python best practice
+- `pythonize_columns()`: same as the above but applies to an entire data frame
 
 These functions can all be directly imported from the package similar to the main functions discussed in the previous sections.
 
