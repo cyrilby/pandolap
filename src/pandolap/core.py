@@ -360,6 +360,7 @@ def load_data_from_cube(
     non_empty: bool = True,
     print_mdx_query: bool = False,
     pythonize_col_names: bool = False,
+    custom_catalog_name: str | None = None,
 ) -> pd.DataFrame:
     """
     Automatically connects to a given cube, constructs an MDX
@@ -445,8 +446,13 @@ def load_data_from_cube(
         query += f", {row_set} ON ROWS"
 
     # Connecting to the cube & finding the initial catalog name
+    # (or using a custom name passed on by the user)
     conn = connect_to_cube(env_conn_name)
-    catalog_name = get_catalog_name(conn)
+    if custom_catalog_name:
+        catalog_name = custom_catalog_name
+    else:
+        catalog_name = get_catalog_name(conn)
+
     query += f" FROM {catalog_name}"
 
     # Optional printing of the MDX query, if so specified by the user

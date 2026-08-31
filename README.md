@@ -1,7 +1,7 @@
 # PandOLAP: importing data from MSOLAP cubes made easy
 
 - Author: github.com/cyrilby
-- Last meaningful update: 28-08-2026
+- Last meaningful update: 31-08-2026
 
 `PandOLAP` is a tiny package designed to make loading data from MSOLAP cubes into pandas data frames super easy.
 
@@ -125,4 +125,6 @@ These functions can all be directly imported from the package similar to the mai
 
 ## Other things to be aware of
 
-The underlying code uses `NON EMPTY` in order to speed the process of data extraction but can in some rare cases (depending on the exact definition of the measure you're trying to extract) underestimate the number of true missing values. Running without the `NON EMPTY` parameter will generally slow down the extraction process significantly.
+The underlying code uses `NON EMPTY` in order to **speed up the process of data extraction** but can in some rare cases (depending on the exact definition of the measure you're trying to extract) underestimate the number of true missing values. Running without the `NON EMPTY` parameter will generally slow down the extraction process significantly. This parameter can easily be disabled by setting the `non_empty` to `False`.
+
+Further note that the package in its current version **only supports Windows**-based operating systems.
